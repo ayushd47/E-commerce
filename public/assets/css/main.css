@@ -1422,7 +1422,9 @@ h2.title {
 
 #form {
     display: block;
-    margin-right: 20px;
+    margin-left: 26%;
+      margin-right: 26%;
+    position: relative;
     margin-bottom: 185px;
     margin-top: 20px;
     overflow: hidden;
@@ -1431,6 +1433,10 @@ h2.title {
 .login-form {
 }
 
+.col{
+	float:left;
+	margin-right:20px;
+}
 .signup-form {
 }
 
@@ -1445,7 +1451,7 @@ h2.title {
 
 .login-form form input,
 .signup-form form input {
-    background: #f0f0e9;
+
     border: medium none;
     color: #696763;
     display: block;
