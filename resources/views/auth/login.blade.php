@@ -10,7 +10,7 @@
                 <div class="login-form">
                     <!--login form-->
                     <div class="jumbotron jumbotron-fluid">
-                        <h2>Login to your account</h2>
+                        <h2>Login Form</h2>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group row">
