@@ -93,11 +93,41 @@
 					<div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
-								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+
+								@guest
+								@if (Route::has('register'))
 								<li><a href="{{ route('login') }}"><i class="fa fa-lock"></i> Login/Register</a></li>
+								@endif
+								@else
+								<li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
+								<li class="nav-item dropdown" id="dropdownMenuButton">
+
+									<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+										Setting<span class="caret"></span>
+										<!-- {{ Auth::user()->name }} -->
+									</a>
+
+									<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href=""><i class="fa fa-user"></i> Account</a>
+										<br>
+
+										<!-- <a class="dropdown-item" href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a>
+										<br>					 -->
+
+										<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+											<i class="fa fa-sign-out"></i>{{ __('Logout') }}
+										</a>
+
+										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+											@csrf
+										</form>
+									</div>
+								</li>
+								@endguest
+							</ul>
+
 							</ul>
 						</div>
 					</div>
