@@ -11,7 +11,7 @@
                     <!--login form-->
                     <div class="jumbotron jumbotron-fluid">
                         <h2>Login Form</h2>
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('login.custom') }}">
                             @csrf
                             <div class="form-group row">
                                 <div class="col-md-9">
